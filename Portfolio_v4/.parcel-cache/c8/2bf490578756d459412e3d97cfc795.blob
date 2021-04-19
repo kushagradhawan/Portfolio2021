@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script defer="" src="9f3f0397a3729cfef951edc494372e0c"></script>
+    </head>
+    <body>
+        <nav class="o-navigation">
+            <div class="c-project-links"></div>
+        </nav>
+        <div class="b-background-stripes"></div>
+        <main class="o-main o-main--home">
+            <section class="o-landing">
+                <h1 class="js-landing-title t-h1">Designer Developer</h1>
+                <div class="js-landing-arrow">
+                    <!-- insert svg arrow icon here -->
+                </div>
+            </section>
+            <section class="o-introduction">
+                <div class="image"></div>
+                <div class="text"></div>
+            </section>
+            <section class="o-work"></section>
+            <section class="o-contact"></section>
+        </main>
+    </body>
+</html>

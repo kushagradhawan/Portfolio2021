@@ -1,0 +1,5 @@
+require("./styles/index.scss");
+/*temporary js*/
+/*grid toggle*/
+const gridToggle = document.querySelector(".temporary-grid__toggle");
+gridToggle.addEventListener("click", () => {});

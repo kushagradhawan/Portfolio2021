@@ -1,0 +1,16 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+function nearestPreviousInteger(value, integer) {
+  /*add sanity checks here*/
+  if (value % integer === 0) {
+    return;
+  }
+  return Math.floor(value / integer) * integer;
+}
+exports.default = nearestPreviousInteger;
+/*simple test case*/
+let testArray = [];
+for (let i = 0; i < 100; i++) {
+  let a = Math.floor(Math.random() * 100);
+}
+nearestPreviousInteger(304, 16);

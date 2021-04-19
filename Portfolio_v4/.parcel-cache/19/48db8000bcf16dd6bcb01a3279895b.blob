@@ -1,0 +1,12 @@
+require("./styles/index.scss");
+/*temporary js*/
+/*grid toggle*/
+// (name === 'true') ? 'Y' :'N';
+const gridToggle = document.querySelector(".temporary-grid-toggle");
+const grid = document.querySelectorAll(".temporary-grid");
+let gridState = true;
+gridToggle.addEventListener("click", () => {
+  if (gridState) {
+    grid.style.opacity = 0;
+  }
+});

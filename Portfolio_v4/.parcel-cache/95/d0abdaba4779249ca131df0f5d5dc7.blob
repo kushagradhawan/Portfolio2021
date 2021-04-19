@@ -1,0 +1,19 @@
+require("./styles/index.scss");
+/*temporary js*/
+/*grid toggle*/
+// (name === 'true') ? 'Y' :'N';
+const gridToggle = document.querySelector(".temporary-grid-toggle");
+const grid = document.querySelector(".temporary-grid");
+let gridState = false;
+gridToggle.addEventListener("click", () => {
+  if (gridState) {
+    grid.style.opacity = 0;
+    gridState = false;
+  } else {
+    grid.style.opacity = 1;
+    gridState = true;
+  }
+});
+/*js page adjustments*/
+const homeIntroductionImage = document.querySelector(".c-home__introduction .c-introduction__image");
+homeIntroductionImage.style.width = homeIntroductionImage.getBoundingClientRect().width + 32 + "px";

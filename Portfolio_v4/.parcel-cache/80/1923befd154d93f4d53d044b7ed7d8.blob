@@ -1,0 +1,11 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+function nearest16(value) {
+  return Math.ceil((value + 1) / 10) * 10;
+}
+exports.default = nearest16;
+/*test case*/
+let testArray = [];
+for (let i = 0; i < 100; i++) {
+  console.log(Math.floor(Math.random() * 100 + 1));
+}

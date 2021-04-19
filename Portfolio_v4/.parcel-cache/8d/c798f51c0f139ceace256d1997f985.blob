@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script defer="" src="9f3f0397a3729cfef951edc494372e0c"></script>
+    </head>
+    <body>
+        <!-- temporary styles -->
+        <div class="b-container" style="bb4185e0702726a12348148101f6a880">
+            <div style="877169c9da93162797e64981b6131566"></div>
+            <div style="f4405f65bc35ac1bdec2f03d7fdde7e0"></div>
+            <div style="1eaebd63cb0b03724a62681d2fd61ec8"></div>
+            <div style="521fd2677567ec2d2646b510cf2ff83f"></div>
+            <div style="bc2ed5155b83e54c9605b06785b4d8a9"></div>
+            <div style="37bb591e51ff331b17b7edc82ca26317"></div>
+            <div style="8d9cdfe518ec71bbc62ebf679edf2ee1"></div>
+            <div style="096f72833080b7b4576e22eb838afad8"></div>
+        </div>
+
+        <!-- fixed navigation -->
+        <nav class="o-global-nav">
+            <nav class="c-project-links"></nav>
+
+            <nav class="c-fixed-nav">
+                <section class="c-nav-section">
+                    <div class="c-nav__title">
+                        <h5 class="t-h5">Contents</h5>
+                        <hr class="c-nav__line-break">
+                    </div>
+                    <nav class="c-nav__link-list">
+                        <a href="">
+                            <div class="c-nav__list-item">
+                                <p class="t-caption-1">Project Definition</p>
+                                <hr class="c-nav__line-break">
+                            </div>
+                        </a>
+                    </nav>
+                </section>
+            </nav>
+        </nav>
+
+        <div class="b-background-stripes"></div>
+        <main class="o-main o-main--home">
+            <section class="o-landing">
+                <h1 class="js-landing-title t-h1">Designer Developer</h1>
+                <div class="js-landing-arrow">
+                    <!-- insert svg arrow icon here -->
+                </div>
+            </section>
+            <section class="o-introduction">
+                <div class="image"></div>
+                <div class="text"></div>
+            </section>
+            <section class="o-work"></section>
+            <section class="o-contact"></section>
+        </main>
+    </body>
+</html>

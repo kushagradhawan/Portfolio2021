@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script defer="" src="9f3f0397a3729cfef951edc494372e0c"></script>
+    </head>
+    <body>
+        <!-- temporary elements and styles -->
+        <div class="temporary-grid-toggle"></div>
+        <div class="b-container temporary-grid">
+            <div class="temporary-grid__cols"></div>
+            <div class="temporary-grid__cols"></div>
+            <div class="temporary-grid__cols"></div>
+            <div class="temporary-grid__cols"></div>
+            <div class="temporary-grid__cols"></div>
+            <div class="temporary-grid__cols"></div>
+            <div class="temporary-grid__cols"></div>
+            <div class="temporary-grid__cols"></div>
+        </div>
+        <!-- temporary elements and styles -->
+
+        <!-- fixed navigation -->
+        <nav class="o-global-nav">
+            <!-- project links -->
+            <nav class="c-project-links">
+                <a href="" class="c-project-links__list-item">
+                    <p class="t-caption-2">01</p>
+                    <h6 class="t-h6">FA Homes</h6>
+                    <p class="t-caption-2">We delivered on Brand Identity, Visual Design, Web and Application Design</p>
+                </a>
+                <a href="" class="c-project-links__list-item">
+                    <p class="t-caption-2">01</p>
+                    <h6 class="t-h6">FA Homes</h6>
+                    <p class="t-caption-2">We delivered on Brand Identity, Visual Design, Web and Application Design</p>
+                </a>
+                <a href="" class="c-project-links__list-item">
+                    <h6 class="t-h6">FA Homes</h6>
+                    <p class="t-caption-2">We delivered on Brand Identity, Visual Design, Web and Application Design</p>
+                </a>
+                <a href="" class="c-project-links__list-item">
+                    <h6 class="t-h6">FA Homes</h6>
+                    <p class="t-caption-2">We delivered on Brand Identity, Visual Design, Web and Application Design</p>
+                </a>
+                <a href="" class="c-project-links__list-item">
+                    <h6 class="t-h6">FA Homes</h6>
+                    <p class="t-caption-2">We delivered on Brand Identity, Visual Design, Web and Application Design</p>
+                </a>
+                <a href="" class="c-project-links__list-item">
+                    <h6 class="t-h6">FA Homes</h6>
+                    <p class="t-caption-2">We delivered on Brand Identity, Visual Design, Web and Application Design</p>
+                </a>
+                <a href="" class="c-project-links__list-item">
+                    <h6 class="t-h6">FA Homes</h6>
+                    <p class="t-caption-2">We delivered on Brand Identity, Visual Design, Web and Application Design</p>
+                </a>
+                <a href="" class="c-project-links__list-item">
+                    <h6 class="t-h6">FA Homes</h6>
+                    <p class="t-caption-2">We delivered on Brand Identity, Visual Design, Web and Application Design</p>
+                </a>
+            </nav>
+
+            <!-- main side navigation -->
+            <nav class="c-fixed-nav">
+                <section class="c-fixed-nav__section">
+                    <h5 class="c-fixed-nav__title t-h5">Contents</h5>
+                    <nav class="c-fixed-nav__link-list">
+                        <a href="" class="c-fixed-nav__list-item">
+                            <p class="t-caption-1">Project Definition</p>
+                            <p class="t-caption-1 t-caption-1--bold">DEF</p>
+                        </a>
+                    </nav>
+                </section>
+            </nav>
+        </nav>
+
+        <!-- background repeating gradient -->
+        <div class="b-background-stripes"></div>
+
+        <main class="o-main o-main--home">
+            <section class="o-main--home__landing">
+                <h1 class="js-landing-title t-h1">Designer Developer</h1>
+                <div class="js-landing-arrow c-arrow">
+                    <!-- insert svg arrow icon here -->
+                </div>
+            </section>
+
+            <section class="o-main--home__introduction">
+                <picture>
+                    <source media="" srcset="7cb2e8dea17182042075bc3e5cc23628">
+                </picture>
+                <div class="c-introduction__image"></div>
+                <div class="c-introduction__text"></div>
+            </section>
+
+            <section class="o-main--home__work"></section>
+            <section class="o-contact"></section>
+        </main>
+    </body>
+</html>

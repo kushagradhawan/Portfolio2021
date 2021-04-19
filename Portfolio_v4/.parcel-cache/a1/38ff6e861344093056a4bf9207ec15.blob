@@ -1,0 +1,10 @@
+require("./styles/index.scss");
+/*temporary js*/
+/*grid toggle*/
+const gridToggle = document.querySelector(".temporary-grid__toggle");
+const gridCols = document.querySelectorAll(".temporary-grid__cols");
+gridToggle.addEventListener("click", () => {
+  gridCols.forEach(grid => {
+    grid.style.opacity = "0";
+  });
+});

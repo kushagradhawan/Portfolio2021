@@ -1,0 +1,6 @@
+@use "./base";
+
+.o-main {
+    @extend .b-container;
+    margin-top: 6rem;
+}

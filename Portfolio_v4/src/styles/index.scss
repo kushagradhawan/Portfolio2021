@@ -1,0 +1,14 @@
+@use "./reset";
+@use "./variables";
+@use "./base";
+@use "./text";
+@use "./objects";
+@use "./components/project-links";
+@use "./components/fixed-navigation";
+@use "./components/home";
+
+/* font smoothing */
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
