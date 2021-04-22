@@ -5,6 +5,7 @@ import imagesLoaded from "imagesloaded";
 import fragment from "./shaders/fragment.glsl";
 import vertex from "./shaders/vertex.glsl";
 import ASScroll from "@ashthornton/asscroll";
+import Highway from "@dogstudio/highway";
 
 /* constants */
 const FONT_TIMEOUT = 25000;
@@ -173,3 +174,5 @@ Promise.all([
 });
 
 /* logic for page transitions */
+
+const highwayCore = new Highway.Core({});

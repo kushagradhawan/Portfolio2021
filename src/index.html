@@ -42,65 +42,67 @@
 
         <section class="m-preloader"></section>
 
-        <main class="js-main o-home asscroll-container">
-            <div data-scroll class="o-scrollable">
-                <section class="m-home__title">
-                    <h1 class="a-title a-title--lg">
-                        <span>{{title}}</span>
-                    </h1>
-                    <div class="a-arrow a-arrow--lg">
-                        <!-- add svg icon -->
-                    </div>
-                </section>
+        <div class="data-router-wrapper">
+            <main class="js-main o-home asscroll-container">
+                <div data-scroll class="o-scrollable">
+                    <section class="m-home__title">
+                        <h1 class="a-title a-title--lg">
+                            <span>{{title}}</span>
+                        </h1>
+                        <div class="a-arrow a-arrow--lg">
+                            <!-- add svg icon -->
+                        </div>
+                    </section>
 
-                <section class="m-home__intro">
-                    <img class="a-intro__image" src="./assets/images/sample-1.jpg" alt="" />
-                    <section class="m-intro__text">
-                        <p class="a-subhead">{{homeIntro.greeting}}</p>
-                        <h4 class="a-headline">{{homeIntro.title}}</h4>
-                        <p class="a-caption">{{homeIntro.availability}}</p>
-                        <button class="a-button">
-                            <p class="a-caption">{{buttons.contact}}</p>
-                            <hr class="a-underline" />
-                        </button>
-                        <p class="a-subhead"></p>
-                        <p class="a-caption"></p>
-                        <p class="a-caption"></p>
+                    <section class="m-home__intro">
+                        <img class="a-intro__image" src="./assets/images/sample-1.jpg" alt="" />
+                        <section class="m-intro__text">
+                            <p class="a-subhead">{{homeIntro.greeting}}</p>
+                            <h4 class="a-headline">{{homeIntro.title}}</h4>
+                            <p class="a-caption">{{homeIntro.availability}}</p>
+                            <button class="a-button">
+                                <p class="a-caption">{{buttons.contact}}</p>
+                                <hr class="a-underline" />
+                            </button>
+                            <p class="a-subhead"></p>
+                            <p class="a-caption"></p>
+                            <p class="a-caption"></p>
+                            <p class="a-caption"></p>
+                            <button class="a-button">
+                                <p class="a-caption"></p>
+                                <hr class="a-underline" />
+                            </button>
+                        </section>
+                    </section>
+
+                    <section class="o-home__work">
+                        <h3 class="a-title a-title--sm"></h3>
                         <p class="a-caption"></p>
                         <button class="a-button">
                             <p class="a-caption"></p>
                             <hr class="a-underline" />
                         </button>
-                    </section>
-                </section>
 
-                <section class="o-home__work">
-                    <h3 class="a-title a-title--sm"></h3>
-                    <p class="a-caption"></p>
-                    <button class="a-button">
-                        <p class="a-caption"></p>
-                        <hr class="a-underline" />
-                    </button>
-
-                    <each loop="item, index in projectReferences">
-                        <div class="m-work__item {{ homeWork.position(index) }}">
-                            <p class="a-caption">0{{index + 1 }} ©{{item.year}}</p>
-                            <h2 class="a-title a-title--md">{{ item.name }}</h2>
-                            <div class="m-work__thumbnails">
-                                <img src="{{ item.thumbnails.t1 }}" alt="" class="a-thumbnail__image-1" />
-                                <img src="{{ item.thumbnails.t2 }}" alt="" class="a-thumbnail__image-2" />
-                                <img src="{{ item.thumbnails.t3 }}" alt="" class="a-thumbnail__image-3" />
-                                <div class="m-work__description">
-                                    <p class="a-caption a-caption--sm">0{{ index + 1 }}</p>
-                                    <h5 class="a-callout">{{ item.fullname }}</h5>
-                                    <p class="a-caption a-caption--sm">{{ item.description }}</p>
+                        <each loop="item, index in projectReferences">
+                            <div class="m-work__item {{ homeWork.position(index) }}">
+                                <p class="a-caption">0{{index + 1 }} ©{{item.year}}</p>
+                                <h2 class="a-title a-title--md">{{ item.name }}</h2>
+                                <div class="m-work__thumbnails">
+                                    <img src="{{ item.thumbnails.t1 }}" alt="" class="a-thumbnail__image-1" />
+                                    <img src="{{ item.thumbnails.t2 }}" alt="" class="a-thumbnail__image-2" />
+                                    <img src="{{ item.thumbnails.t3 }}" alt="" class="a-thumbnail__image-3" />
+                                    <div class="m-work__description">
+                                        <p class="a-caption a-caption--sm">0{{ index + 1 }}</p>
+                                        <h5 class="a-callout">{{ item.fullname }}</h5>
+                                        <p class="a-caption a-caption--sm">{{ item.description }}</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </each>
-                </section>
-            </div>
-        </main>
+                        </each>
+                    </section>
+                </div>
+            </main>
+        </div>
 
         <div id="a-webgl-container"></div>
         <script defer src="./index.js"></script>

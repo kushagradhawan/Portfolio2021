@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><link rel="stylesheet" href="/index.HASH_REF_91870f3c19f8a82cc61dbb48b05be581.css">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="alignment-grid">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <!-- navigation -->
+        <section class="o-nav">
+            <nav class="m-logo">
+                <p class="a-callout">K/D</p>
+            </nav>
+            <nav class="m-logo"></nav>
+            <nav class="m-project-links">
+                
+                    <a href="/index.html" class="m-link-item">
+                        <p class="a-caption a-caption--sm">01</p>
+                        <p class="a-subhead">FA Homes</p>
+                        <p class="a-caption a-caption--sm">Brand Identity, Visual Design, Web and Application Design</p>
+                    </a>
+                
+                    <a href="/index.html" class="m-link-item">
+                        <p class="a-caption a-caption--sm">02</p>
+                        <p class="a-subhead">FA Homes</p>
+                        <p class="a-caption a-caption--sm">Brand Identity, Visual Design, Web and Application Design</p>
+                    </a>
+                
+                    <a href="/index.html" class="m-link-item">
+                        <p class="a-caption a-caption--sm">03</p>
+                        <p class="a-subhead">FA Homes</p>
+                        <p class="a-caption a-caption--sm">Brand Identity, Visual Design, Web and Application Design</p>
+                    </a>
+                
+                    <a href="/index.html" class="m-link-item">
+                        <p class="a-caption a-caption--sm">04</p>
+                        <p class="a-subhead">FA Homes</p>
+                        <p class="a-caption a-caption--sm">Brand Identity, Visual Design, Web and Application Design</p>
+                    </a>
+                
+                    <a href="/index.html" class="m-link-item">
+                        <p class="a-caption a-caption--sm">05</p>
+                        <p class="a-subhead">FA Homes</p>
+                        <p class="a-caption a-caption--sm">Brand Identity, Visual Design, Web and Application Design</p>
+                    </a>
+                
+                    <a href="/index.html" class="m-link-item">
+                        <p class="a-caption a-caption--sm">06</p>
+                        <p class="a-subhead">FA Homes</p>
+                        <p class="a-caption a-caption--sm">Brand Identity, Visual Design, Web and Application Design</p>
+                    </a>
+                
+                    <a href="/index.html" class="m-link-item">
+                        <p class="a-caption a-caption--sm">07</p>
+                        <p class="a-subhead">FA Homes</p>
+                        <p class="a-caption a-caption--sm">Brand Identity, Visual Design, Web and Application Design</p>
+                    </a>
+                
+                    <a href="/index.html" class="m-link-item">
+                        <p class="a-caption a-caption--sm">08</p>
+                        <p class="a-subhead">FA Homes</p>
+                        <p class="a-caption a-caption--sm">Brand Identity, Visual Design, Web and Application Design</p>
+                    </a>
+                
+            </nav>
+            <nav class="m-fixed-nav m-fixed-nav--main"></nav>
+            <nav class="m-fixed-nav m-fixed-nav--index"></nav>
+        </section>
+
+        <!-- background -->
+        <section class="a-background-stripes a-background-stripes--vertical"></section>
+
+        <section class="m-preloader"></section>
+
+        <div class="data-router-wrapper">
+            <main class="js-main o-home asscroll-container">
+                <div data-scroll="" class="o-scrollable">
+                    <section class="m-home__title">
+                        <h1 class="a-title a-title--lg">
+                            <span>Designer Developer</span>
+                        </h1>
+                        <div class="a-arrow a-arrow--lg">
+                            <!-- add svg icon -->
+                        </div>
+                    </section>
+
+                    <section class="m-home__intro">
+                        <img class="a-intro__image" src="/sample-1.HASH_REF_50525d4279876217bdfaabb22fd09d4e.jpg" alt="">
+                        <section class="m-intro__text">
+                            <p class="a-subhead">Hello</p>
+                            <h4 class="a-headline">I am an Interactive Designer and a Creative Developer, based in New Delhi, India</h4>
+                            <p class="a-caption">I am available to work remotely at any time zone from April 2021</p>
+                            <button class="a-button">
+                                <p class="a-caption">Contact</p>
+                                <hr class="a-underline">
+                            </button>
+                            <p class="a-subhead"></p>
+                            <p class="a-caption"></p>
+                            <p class="a-caption"></p>
+                            <p class="a-caption"></p>
+                            <button class="a-button">
+                                <p class="a-caption"></p>
+                                <hr class="a-underline">
+                            </button>
+                        </section>
+                    </section>
+
+                    <section class="o-home__work">
+                        <h3 class="a-title a-title--sm"></h3>
+                        <p class="a-caption"></p>
+                        <button class="a-button">
+                            <p class="a-caption"></p>
+                            <hr class="a-underline">
+                        </button>
+
+                        
+                            <div class="m-work__item m-work__item--left">
+                                <p class="a-caption">01 ©2020</p>
+                                <h2 class="a-title a-title--md">FA</h2>
+                                <div class="m-work__thumbnails">
+                                    <img src="/sample-1.HASH_REF_50525d4279876217bdfaabb22fd09d4e.jpg" alt="" class="a-thumbnail__image-1">
+                                    <img src="/sample-2.HASH_REF_0be7d6cc748590b6160df9c960b5f5d3.jpg" alt="" class="a-thumbnail__image-2">
+                                    <img src="/sample-1.HASH_REF_50525d4279876217bdfaabb22fd09d4e.jpg" alt="" class="a-thumbnail__image-3">
+                                    <div class="m-work__description">
+                                        <p class="a-caption a-caption--sm">01</p>
+                                        <h5 class="a-callout">FA Homes</h5>
+                                        <p class="a-caption a-caption--sm">Brand Identity, Visual Design, Web and Application Design</p>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="m-work__item m-work__item--right">
+                                <p class="a-caption">02 ©2020</p>
+                                <h2 class="a-title a-title--md">FA</h2>
+                                <div class="m-work__thumbnails">
+                                    <img src="/sample-2.HASH_REF_0be7d6cc748590b6160df9c960b5f5d3.jpg" alt="" class="a-thumbnail__image-1">
+                                    <img src="/sample-1.HASH_REF_50525d4279876217bdfaabb22fd09d4e.jpg" alt="" class="a-thumbnail__image-2">
+                                    <img src="/sample-2.HASH_REF_0be7d6cc748590b6160df9c960b5f5d3.jpg" alt="" class="a-thumbnail__image-3">
+                                    <div class="m-work__description">
+                                        <p class="a-caption a-caption--sm">02</p>
+                                        <h5 class="a-callout">FA Homes</h5>
+                                        <p class="a-caption a-caption--sm">Brand Identity, Visual Design, Web and Application Design</p>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="m-work__item m-work__item--left">
+                                <p class="a-caption">03 ©2020</p>
+                                <h2 class="a-title a-title--md">FA</h2>
+                                <div class="m-work__thumbnails">
+                                    <img src="/sample-1.HASH_REF_50525d4279876217bdfaabb22fd09d4e.jpg" alt="" class="a-thumbnail__image-1">
+                                    <img src="/sample-2.HASH_REF_0be7d6cc748590b6160df9c960b5f5d3.jpg" alt="" class="a-thumbnail__image-2">
+                                    <img src="/sample-1.HASH_REF_50525d4279876217bdfaabb22fd09d4e.jpg" alt="" class="a-thumbnail__image-3">
+                                    <div class="m-work__description">
+                                        <p class="a-caption a-caption--sm">03</p>
+                                        <h5 class="a-callout">FA Homes</h5>
+                                        <p class="a-caption a-caption--sm">Brand Identity, Visual Design, Web and Application Design</p>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="m-work__item m-work__item--right">
+                                <p class="a-caption">04 ©2020</p>
+                                <h2 class="a-title a-title--md">FA</h2>
+                                <div class="m-work__thumbnails">
+                                    <img src="/sample-2.HASH_REF_0be7d6cc748590b6160df9c960b5f5d3.jpg" alt="" class="a-thumbnail__image-1">
+                                    <img src="/sample-1.HASH_REF_50525d4279876217bdfaabb22fd09d4e.jpg" alt="" class="a-thumbnail__image-2">
+                                    <img src="/sample-2.HASH_REF_0be7d6cc748590b6160df9c960b5f5d3.jpg" alt="" class="a-thumbnail__image-3">
+                                    <div class="m-work__description">
+                                        <p class="a-caption a-caption--sm">04</p>
+                                        <h5 class="a-callout">FA Homes</h5>
+                                        <p class="a-caption a-caption--sm">Brand Identity, Visual Design, Web and Application Design</p>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="m-work__item m-work__item--left">
+                                <p class="a-caption">05 ©2020</p>
+                                <h2 class="a-title a-title--md">FA</h2>
+                                <div class="m-work__thumbnails">
+                                    <img src="/sample-1.HASH_REF_50525d4279876217bdfaabb22fd09d4e.jpg" alt="" class="a-thumbnail__image-1">
+                                    <img src="/sample-2.HASH_REF_0be7d6cc748590b6160df9c960b5f5d3.jpg" alt="" class="a-thumbnail__image-2">
+                                    <img src="/sample-1.HASH_REF_50525d4279876217bdfaabb22fd09d4e.jpg" alt="" class="a-thumbnail__image-3">
+                                    <div class="m-work__description">
+                                        <p class="a-caption a-caption--sm">05</p>
+                                        <h5 class="a-callout">FA Homes</h5>
+                                        <p class="a-caption a-caption--sm">Brand Identity, Visual Design, Web and Application Design</p>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="m-work__item m-work__item--right">
+                                <p class="a-caption">06 ©2020</p>
+                                <h2 class="a-title a-title--md">FA</h2>
+                                <div class="m-work__thumbnails">
+                                    <img src="/sample-2.HASH_REF_0be7d6cc748590b6160df9c960b5f5d3.jpg" alt="" class="a-thumbnail__image-1">
+                                    <img src="/sample-1.HASH_REF_50525d4279876217bdfaabb22fd09d4e.jpg" alt="" class="a-thumbnail__image-2">
+                                    <img src="/sample-2.HASH_REF_0be7d6cc748590b6160df9c960b5f5d3.jpg" alt="" class="a-thumbnail__image-3">
+                                    <div class="m-work__description">
+                                        <p class="a-caption a-caption--sm">06</p>
+                                        <h5 class="a-callout">FA Homes</h5>
+                                        <p class="a-caption a-caption--sm">Brand Identity, Visual Design, Web and Application Design</p>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="m-work__item m-work__item--left">
+                                <p class="a-caption">07 ©2020</p>
+                                <h2 class="a-title a-title--md">FA</h2>
+                                <div class="m-work__thumbnails">
+                                    <img src="/sample-1.HASH_REF_50525d4279876217bdfaabb22fd09d4e.jpg" alt="" class="a-thumbnail__image-1">
+                                    <img src="/sample-2.HASH_REF_0be7d6cc748590b6160df9c960b5f5d3.jpg" alt="" class="a-thumbnail__image-2">
+                                    <img src="/sample-1.HASH_REF_50525d4279876217bdfaabb22fd09d4e.jpg" alt="" class="a-thumbnail__image-3">
+                                    <div class="m-work__description">
+                                        <p class="a-caption a-caption--sm">07</p>
+                                        <h5 class="a-callout">FA Homes</h5>
+                                        <p class="a-caption a-caption--sm">Brand Identity, Visual Design, Web and Application Design</p>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="m-work__item m-work__item--right">
+                                <p class="a-caption">08 ©2020</p>
+                                <h2 class="a-title a-title--md">FA</h2>
+                                <div class="m-work__thumbnails">
+                                    <img src="/sample-2.HASH_REF_0be7d6cc748590b6160df9c960b5f5d3.jpg" alt="" class="a-thumbnail__image-1">
+                                    <img src="/sample-1.HASH_REF_50525d4279876217bdfaabb22fd09d4e.jpg" alt="" class="a-thumbnail__image-2">
+                                    <img src="/sample-2.HASH_REF_0be7d6cc748590b6160df9c960b5f5d3.jpg" alt="" class="a-thumbnail__image-3">
+                                    <div class="m-work__description">
+                                        <p class="a-caption a-caption--sm">08</p>
+                                        <h5 class="a-callout">FA Homes</h5>
+                                        <p class="a-caption a-caption--sm">Brand Identity, Visual Design, Web and Application Design</p>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                    </section>
+                </div>
+            </main>
+        </div>
+
+        <div id="a-webgl-container"></div>
+        <script defer="" src="/index.HASH_REF_0fa2489aa94c8731ee2aee9f3fafb3e2.js"></script>
+    </body>
+</html>
