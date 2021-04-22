@@ -12,7 +12,7 @@ module.exports = {
                         year: "2020",
                         fullname: "FA Homes",
                         description: "Brand Identity, Visual Design, Web and Application Design",
-                        link: "./design-process.html",
+                        link: "./index.html",
                         thumbnails: {
                             t1: "./assets/images/sample-1.jpg",
                             t2: "./assets/images/sample-2.jpg",

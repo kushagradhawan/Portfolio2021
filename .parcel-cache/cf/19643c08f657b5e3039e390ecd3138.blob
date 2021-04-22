@@ -1,0 +1,156 @@
+require("./main.scss");
+var _three = require("three");
+var _fontfaceobserver = require("fontfaceobserver");
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+var _fontfaceobserverDefault = _parcelHelpers.interopDefault(_fontfaceobserver);
+var _imagesloaded = require("imagesloaded");
+var _imagesloadedDefault = _parcelHelpers.interopDefault(_imagesloaded);
+var _shadersFragmentGlsl = require("./shaders/fragment.glsl");
+var _shadersFragmentGlslDefault = _parcelHelpers.interopDefault(_shadersFragmentGlsl);
+var _shadersVertexGlsl = require("./shaders/vertex.glsl");
+var _shadersVertexGlslDefault = _parcelHelpers.interopDefault(_shadersVertexGlsl);
+var _ashthorntonAsscroll = require("@ashthornton/asscroll");
+var _ashthorntonAsscrollDefault = _parcelHelpers.interopDefault(_ashthorntonAsscroll);
+/*constants*/
+const FONT_TIMEOUT = 25000;
+/*webgl*/
+class WebGL {
+  constructor(domObject) {
+    this.scene = new _three.Scene();
+    this.container = domObject.dom;
+    this.width = this.container.offsetWidth;
+    this.height = this.container.offsetHeight;
+    this.renderer = new _three.WebGLRenderer({
+      alpha: true
+    });
+    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    this.renderer.setSize(this.width, this.height);
+    this.renderer.setClearColor(0xffffff, 0);
+    this.container.appendChild(this.renderer.domElement);
+    this.scene.background = null;
+    this.camera = new _three.PerspectiveCamera(0, this.width / this.height, 400, 1000);
+    this.camera_z = 600;
+    this.camera.position.set(0, 0, this.camera_z);
+    this.camera.fov = 2 * Math.atan(this.height / 2 / this.camera_z) * (180 / Math.PI);
+    this.time = 0;
+    this.images = [...document.querySelectorAll("img")];
+    this.isPlaying = true;
+    this.setSmoothScroll();
+    this.addImages();
+    this.setPosition();
+    this.resize();
+    this.render();
+    this.setupResize();
+  }
+  setupResize() {
+    window.addEventListener("resize", this.resize.bind(this));
+  }
+  resize() {
+    this.width = this.container.offsetWidth;
+    this.height = this.container.offsetHeight;
+    this.renderer.setSize(this.width, this.height);
+    this.camera.aspect = this.width / this.height;
+    this.camera.updateProjectionMatrix();
+  }
+  addImages() {
+    this.material = new _three.ShaderMaterial({
+      side: _three.DoubleSide,
+      vertexShader: _shadersVertexGlslDefault.default,
+      fragmentShader: _shadersFragmentGlslDefault.default,
+      uniforms: {
+        time: {
+          value: 0
+        },
+        uImage: {
+          value: 0
+        },
+        uImageSizes: {
+          value: new _three.Vector2()
+        },
+        uPlaneSizes: {
+          value: new _three.Vector2()
+        }
+      }
+    });
+    this.materials = [];
+    this.imageStore = this.images.map(img => {
+      let bounds = img.getBoundingClientRect();
+      let geometry = new _three.PlaneBufferGeometry(bounds.width, bounds.height, 16, 16);
+      let texture = new _three.Texture(img);
+      texture.needsUpdate = true;
+      let material = this.material.clone();
+      this.materials.push(material);
+      material.uniforms.uImage.value = texture;
+      material.uniforms.uImageSizes.value.x = img.naturalWidth;
+      material.uniforms.uImageSizes.value.y = img.naturalHeight;
+      material.uniforms.uPlaneSizes.value.x = bounds.width;
+      material.uniforms.uPlaneSizes.value.y = bounds.height;
+      let mesh = new _three.Mesh(geometry, material);
+      this.scene.add(mesh);
+      return {
+        img: img,
+        top: bounds.top,
+        left: bounds.left,
+        width: bounds.width,
+        height: bounds.height,
+        mesh: mesh
+      };
+    });
+    console.log(this.imageStore);
+  }
+  setPosition() {
+    this.imageStore.forEach(o => {
+      o.mesh.position.y = -this.smoothScroll.smoothScrollPos - o.top + this.height / 2 - o.height / 2;
+      o.mesh.position.x = o.left - this.width / 2 + o.width / 2;
+    });
+  }
+  stop() {
+    this.isPlaying = false;
+  }
+  play() {
+    if (!this.isPlaying) {
+      this.render();
+      this.isPlaying = true;
+    }
+  }
+  setSmoothScroll() {
+    this.smoothScroll = new _ashthorntonAsscrollDefault.default({
+      disableRaf: true
+    });
+    this.smoothScroll.enable();
+  }
+  render() {
+    if (!this.isPlaying) return;
+    this.time += 0.05;
+    this.materials.forEach(m => {
+      m.uniforms.time.value = this.time;
+    });
+    this.smoothScroll.onRaf();
+    this.setPosition();
+    requestAnimationFrame(this.render.bind(this));
+    this.renderer.render(this.scene, this.camera);
+  }
+}
+let webgl = undefined;
+/*preloader*/
+/*images*/
+const preloadImages = new Promise((resolve, reject) => {
+  const imgLoad = _imagesloadedDefault.default(document.querySelectorAll("img"), {
+    background: true
+  }, resolve);
+});
+/*fonts*/
+let nmachinaRegular = new _fontfaceobserverDefault.default("nmachina-regular");
+let nmachinaMedium = new _fontfaceobserverDefault.default("nmachina-medium");
+let nmachinaBold = new _fontfaceobserverDefault.default("nmachina-bold");
+let nmontrealRegular = new _fontfaceobserverDefault.default("nmontreal-regular");
+let nmontrealMedium = new _fontfaceobserverDefault.default("nmontreal-medium");
+let nmontrealBold = new _fontfaceobserverDefault.default("nmontreal-bold");
+/*all*/
+Promise.all([nmachinaRegular.load(null, FONT_TIMEOUT), nmachinaMedium.load(null, FONT_TIMEOUT), nmachinaBold.load(null, FONT_TIMEOUT), nmontrealRegular.load(null, FONT_TIMEOUT), nmontrealMedium.load(null, FONT_TIMEOUT), nmontrealBold.load(null, FONT_TIMEOUT), preloadImages]).then(function () {
+  console.log("all loaded");
+  /*load webgl*/
+  webgl = new WebGL({
+    dom: document.querySelector("#a-webgl-container")
+  });
+});

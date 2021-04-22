@@ -171,3 +171,5 @@ Promise.all([
         dom: document.querySelector("#a-webgl-container"),
     });
 });
+
+/* logic for page transitions */
