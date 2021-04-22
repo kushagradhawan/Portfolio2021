@@ -51,22 +51,28 @@ class WebGL {
     }
 
     addImages() {
+        this.material = new THREE.ShaderMaterial({
+            side: THREE.DoubleSide,
+            vertexShader: vertex,
+            fragmentShader: fragment,
+            uniforms: {
+                time: { value: 0 },
+                uImage: { value: 0 },
+            },
+        });
+
+        this.materials = [];
+
         this.imageStore = this.images.map((img) => {
             let bounds = img.getBoundingClientRect();
-            let geometry = new THREE.PlaneBufferGeometry(bounds.width, bounds.height, 20, 20);
+            let geometry = new THREE.PlaneBufferGeometry(bounds.width, bounds.height, 16, 16);
             let texture = new THREE.Texture(img);
             texture.needsUpdate = true;
 
-            /* let material = new THREE.ShaderMaterial({
-                side: THREE.DoubleSide,
-                vertexShader: vertex,
-                fragmentShader: fragment,
-                map: texture,
-            }); */
+            let material = this.material.clone();
+            this.materials.push(material);
+            material.uniforms.uImage.value = texture;
 
-            let material = new THREE.MeshBasicMaterial({
-                map: texture,
-            });
             let mesh = new THREE.Mesh(geometry, material);
             this.scene.add(mesh);
 
@@ -90,26 +96,6 @@ class WebGL {
         });
     }
 
-    addObjects() {
-        this.material = new THREE.ShaderMaterial({
-            extensions: {
-                derivatives: "#extension GL_OES_standard_derivatives : enable",
-            },
-            side: THREE.DoubleSide,
-            uniforms: {
-                time: { value: 0 },
-                resolution: { value: new THREE.Vector4() },
-            },
-            vertexShader: vertex,
-            fragmentShader: fragment,
-            wireframe: true,
-        });
-
-        this.geometry = new THREE.PlaneGeometry(100, 100, 32, 32);
-        this.plane = new THREE.Mesh(this.geometry, this.material);
-        this.scene.add(this.plane);
-    }
-
     stop() {
         this.isPlaying = false;
     }
@@ -124,6 +110,11 @@ class WebGL {
     render() {
         if (!this.isPlaying) return;
         this.time += 0.05;
+
+        this.materials.forEach((m) => {
+            m.uniforms.time.value = this.time;
+        });
+
         requestAnimationFrame(this.render.bind(this));
         this.renderer.render(this.scene, this.camera);
     }

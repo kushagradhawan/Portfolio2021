@@ -43,6 +43,7 @@ input::-moz-focus-inner {
 /* img sets */
 img {
   object-fit: cover;
+  opacity: 0;
 }
 
 @font-face {
@@ -51,11 +52,11 @@ img {
 }
 @font-face {
   font-family: "nmachina-medium";
-  src: url("/nmachina-regular.ef6b5c71.otf") format("opentype");
+  src: url("/nmachina-medium.455ae5d4.otf") format("opentype");
 }
 @font-face {
   font-family: "nmachina-bold";
-  src: url("/nmachina-regular.ef6b5c71.otf") format("opentype");
+  src: url("/nmachina-bold.c246afd3.otf") format("opentype");
 }
 @font-face {
   font-family: "nmontreal-regular";
@@ -63,11 +64,11 @@ img {
 }
 @font-face {
   font-family: "nmontreal-medium";
-  src: url("/nmontreal-regular.a02f28ff.otf") format("opentype");
+  src: url("/nmontreal-medium.5a3f6318.otf") format("opentype");
 }
 @font-face {
   font-family: "nmontreal-bold";
-  src: url("/nmontreal-regular.a02f28ff.otf") format("opentype");
+  src: url("/nmontreal-bold.0c95d6c0.otf") format("opentype");
 }
 .a-title {
   text-transform: uppercase;
@@ -163,7 +164,6 @@ img {
 .o-home .o-home__work .m-work__item .m-work__thumbnails img {
   width: 100%;
   max-height: 100%;
-  opacity: 0.3;
 }
 .o-home .o-home__work .m-work__item .m-work__thumbnails .a-thumbnail__image-1 {
   grid-area: t1;

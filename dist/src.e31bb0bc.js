@@ -189,7 +189,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./assets/fonts/nmachina-regular.otf":[["nmachina-regular.ef6b5c71.otf","assets/fonts/nmachina-regular.otf"],"assets/fonts/nmachina-regular.otf"],"./assets/fonts/nmontreal-regular.otf":[["nmontreal-regular.a02f28ff.otf","assets/fonts/nmontreal-regular.otf"],"assets/fonts/nmontreal-regular.otf"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/three/build/three.module.js":[function(require,module,exports) {
+},{"./assets/fonts/nmachina-regular.otf":[["nmachina-regular.ef6b5c71.otf","assets/fonts/nmachina-regular.otf"],"assets/fonts/nmachina-regular.otf"],"./assets/fonts/nmachina-medium.otf":[["nmachina-medium.455ae5d4.otf","assets/fonts/nmachina-medium.otf"],"assets/fonts/nmachina-medium.otf"],"./assets/fonts/nmachina-bold.otf":[["nmachina-bold.c246afd3.otf","assets/fonts/nmachina-bold.otf"],"assets/fonts/nmachina-bold.otf"],"./assets/fonts/nmontreal-regular.otf":[["nmontreal-regular.a02f28ff.otf","assets/fonts/nmontreal-regular.otf"],"assets/fonts/nmontreal-regular.otf"],"./assets/fonts/nmontreal-medium.otf":[["nmontreal-medium.5a3f6318.otf","assets/fonts/nmontreal-medium.otf"],"assets/fonts/nmontreal-medium.otf"],"./assets/fonts/nmontreal-bold.otf":[["nmontreal-bold.0c95d6c0.otf","assets/fonts/nmontreal-bold.otf"],"assets/fonts/nmontreal-bold.otf"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/three/build/three.module.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36267,7 +36267,7 @@ return ImagesLoaded;
 });
 
 },{"ev-emitter":"../node_modules/ev-emitter/ev-emitter.js"}],"shaders/fragment.glsl":[function(require,module,exports) {
-module.exports = "#define GLSLIFY 1\nvarying vec2 vUv;\nvoid main()\t{\n\t// vec2 newUV = (vUv - vec2(0.5))*resolution.zw + vec2(0.5);\n\tgl_FragColor = vec4(vUv,0.0,1.);\n}";
+module.exports = "#define GLSLIFY 1\nvarying vec2 vUv;\n\nuniform float time;\nuniform sampler2D uImage;\n\nvoid main()\t{\n\tvec4 image = texture2D(uImage, vUv);\n\tgl_FragColor = image;\n}";
 },{}],"shaders/vertex.glsl":[function(require,module,exports) {
 module.exports = "#define GLSLIFY 1\nvarying vec2 vUv;\nvoid main() {\n  vUv = uv;\n  gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );\n}";
 },{}],"index.js":[function(require,module,exports) {
@@ -36359,21 +36359,31 @@ var WebGL = /*#__PURE__*/function () {
     value: function addImages() {
       var _this = this;
 
+      this.material = new THREE.ShaderMaterial({
+        side: THREE.DoubleSide,
+        vertexShader: _vertex.default,
+        fragmentShader: _fragment.default,
+        uniforms: {
+          time: {
+            value: 0
+          },
+          uImage: {
+            value: 0
+          }
+        }
+      });
+      this.materials = [];
       this.imageStore = this.images.map(function (img) {
         var bounds = img.getBoundingClientRect();
-        var geometry = new THREE.PlaneBufferGeometry(bounds.width, bounds.height, 20, 20);
+        var geometry = new THREE.PlaneBufferGeometry(bounds.width, bounds.height, 16, 16);
         var texture = new THREE.Texture(img);
         texture.needsUpdate = true;
-        /* let material = new THREE.ShaderMaterial({
-            side: THREE.DoubleSide,
-            vertexShader: vertex,
-            fragmentShader: fragment,
-            map: texture,
-        }); */
 
-        var material = new THREE.MeshBasicMaterial({
-          map: texture
-        });
+        var material = _this.material.clone();
+
+        _this.materials.push(material);
+
+        material.uniforms.uImage.value = texture;
         var mesh = new THREE.Mesh(geometry, material);
 
         _this.scene.add(mesh);
@@ -36400,30 +36410,6 @@ var WebGL = /*#__PURE__*/function () {
       });
     }
   }, {
-    key: "addObjects",
-    value: function addObjects() {
-      this.material = new THREE.ShaderMaterial({
-        extensions: {
-          derivatives: "#extension GL_OES_standard_derivatives : enable"
-        },
-        side: THREE.DoubleSide,
-        uniforms: {
-          time: {
-            value: 0
-          },
-          resolution: {
-            value: new THREE.Vector4()
-          }
-        },
-        vertexShader: _vertex.default,
-        fragmentShader: _fragment.default,
-        wireframe: true
-      });
-      this.geometry = new THREE.PlaneGeometry(100, 100, 32, 32);
-      this.plane = new THREE.Mesh(this.geometry, this.material);
-      this.scene.add(this.plane);
-    }
-  }, {
     key: "stop",
     value: function stop() {
       this.isPlaying = false;
@@ -36439,8 +36425,13 @@ var WebGL = /*#__PURE__*/function () {
   }, {
     key: "render",
     value: function render() {
+      var _this3 = this;
+
       if (!this.isPlaying) return;
       this.time += 0.05;
+      this.materials.forEach(function (m) {
+        m.uniforms.time.value = _this3.time;
+      });
       requestAnimationFrame(this.render.bind(this));
       this.renderer.render(this.scene, this.camera);
     }

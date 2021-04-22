@@ -28,10 +28,8 @@
     },
     "dependencies": {
         "@ashthornton/asscroll": "^1.7.7",
-        "@swup/js-plugin": "^1.0.4",
         "fontfaceobserver": "^2.1.0",
         "imagesloaded": "^4.1.4",
-        "swup": "^2.0.14",
         "three": "^0.127.0"
     }
 }

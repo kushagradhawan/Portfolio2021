@@ -1,5 +1,9 @@
 varying vec2 vUv;
+
+uniform float time;
+uniform sampler2D uImage;
+
 void main()	{
-	// vec2 newUV = (vUv - vec2(0.5))*resolution.zw + vec2(0.5);
-	gl_FragColor = vec4(vUv,0.0,1.);
+	vec4 image = texture2D(uImage, vUv);
+	gl_FragColor = image;
 }

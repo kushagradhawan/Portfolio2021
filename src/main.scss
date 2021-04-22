@@ -6,11 +6,11 @@
 }
 @font-face {
     font-family: "nmachina-medium";
-    src: url("./assets/fonts/nmachina-regular.otf") format("opentype");
+    src: url("./assets/fonts/nmachina-medium.otf") format("opentype");
 }
 @font-face {
     font-family: "nmachina-bold";
-    src: url("./assets/fonts/nmachina-regular.otf") format("opentype");
+    src: url("./assets/fonts/nmachina-bold.otf") format("opentype");
 }
 @font-face {
     font-family: "nmontreal-regular";
@@ -18,11 +18,11 @@
 }
 @font-face {
     font-family: "nmontreal-medium";
-    src: url("./assets/fonts/nmontreal-regular.otf") format("opentype");
+    src: url("./assets/fonts/nmontreal-medium.otf") format("opentype");
 }
 @font-face {
     font-family: "nmontreal-bold";
-    src: url("./assets/fonts/nmontreal-regular.otf") format("opentype");
+    src: url("./assets/fonts/nmontreal-bold.otf") format("opentype");
 }
 
 .a-title {
@@ -119,7 +119,6 @@ $main-container-col-count: 8;
                 img {
                     width: 100%;
                     max-height: 100%;
-                    opacity: 0.3;
                 }
 
                 .a-thumbnail__image-1 {
@@ -137,6 +136,7 @@ $main-container-col-count: 8;
                 }
             }
         }
+
         .m-work__item--left {
             grid-column: 1 / span 6;
         }
