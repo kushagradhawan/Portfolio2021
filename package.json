@@ -4,8 +4,8 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "dev": "npm run clean && parcel ./src/index.html -p 1107",
-        "build": "parcel build index.html",
+        "dev": "npm run clean && parcel ./src/index.html ./src/design-process.html -p 2708",
+        "build": "parcel build ./src/index.html --out-dir ./build",
         "clean": "rimraf ./development && rimraf ./.cache"
     },
     "repository": {

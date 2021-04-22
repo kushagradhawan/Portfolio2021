@@ -77,12 +77,13 @@
 /* variables */
 $main-container-width: 80rem;
 $main-container-col-count: 8;
+$home-intro-image-height: 48rem;
 
 /* base styles */
 .a-grid {
     display: grid;
     grid-template-columns: repeat($main-container-col-count, 1fr);
-    column-gap: 1rem;
+    column-gap: 2rem;
     width: $main-container-width;
     margin-left: calc((100vw - #{$main-container-width}) / 2);
 }
@@ -98,50 +99,131 @@ $main-container-col-count: 8;
     top: 0;
     left: 0;
 }
+.a-background-stripes {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 4rem;
+    height: 100vh;
+    width: calc(100vw - 8rem);
+    opacity: 0.08;
+    z-index: -1;
+}
+.a-background-stripes--vertical {
+    background: repeating-linear-gradient(90deg, white 0px, white 7px, black 7px, black 8px);
+}
 
-.o-home {
+.alignment-grid {
+    position: fixed;
+    width: $main-container-width;
+    left: calc((100vw - #{$main-container-width}) / 2);
+    top: 0;
+    height: 100vh;
     @extend .a-grid;
-    .o-home__work {
-        grid-column: 1 / span $main-container-col-count;
+    @extend .a-grid--no-margin;
+
+    div {
+        background-color: red;
+        opacity: 0.1;
+    }
+}
+
+/* navigation */
+.o-nav {
+    .m-project-links {
+        width: 100vw;
+        background: transparent;
+        position: fixed;
+        top: 0;
+        padding: 2rem calc((100vw - #{$main-container-width}) / 2);
+        display: grid;
+        grid-template-columns: repeat($main-container-col-count, 1fr);
+        column-gap: 2rem;
+        z-index: 10;
+
+        /* elements */
+        .m-link-item {
+            display: block;
+        }
+    }
+}
+
+/* home styles */
+.o-home {
+    .o-scrollable {
         @extend .a-grid;
-        @extend .a-grid--no-margin;
 
-        .m-work__item {
-            margin-bottom: 8rem;
-            .m-work__thumbnails {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                grid-template-rows: repeat(3, 16rem);
-                grid-template-areas: "t1 t2" "t1 t3" "d t3";
-                column-gap: 1rem;
-                row-gap: 1rem;
+        .m-home__title {
+            grid-column: 1 / span $main-container-col-count;
+            margin: 6rem 0;
+        }
 
-                img {
-                    width: 100%;
-                    max-height: 100%;
-                }
+        .m-home__intro {
+            grid-column: 1 / span $main-container-col-count;
+            @extend .a-grid;
+            @extend .a-grid--no-margin;
+            align-items: center;
 
-                .a-thumbnail__image-1 {
-                    grid-area: t1;
-                }
-                .a-thumbnail__image-2 {
-                    grid-area: t2;
-                }
-                .a-thumbnail__image-3 {
-                    grid-area: t3;
-                }
-                .m-work__description {
-                    grid-area: d;
-                    align-self: start;
-                }
+            .a-intro__image {
+                height: $home-intro-image-height;
+                grid-column: 1 / span 5;
+                justify-self: stretch;
+                transform: translate3d(-4rem, 0, 0);
+            }
+
+            .m-intro__text {
+                grid-column: 7 / span 2;
             }
         }
 
-        .m-work__item--left {
-            grid-column: 1 / span 6;
-        }
-        .m-work__item--right {
-            grid-column: 3 / span 6;
+        .o-home__work {
+            grid-column: 1 / span $main-container-col-count;
+            @extend .a-grid;
+            @extend .a-grid--no-margin;
+
+            .m-work__item {
+                margin-bottom: 2rem;
+                .m-work__thumbnails {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-template-rows: repeat(3, 16rem);
+                    grid-template-areas: "t1 t2" "t1 t3" "d t3";
+                    column-gap: 1rem;
+                    row-gap: 1rem;
+
+                    img {
+                        width: 100%;
+                        max-height: 100%;
+                    }
+
+                    .a-thumbnail__image-1 {
+                        grid-area: t1;
+                    }
+                    .a-thumbnail__image-2 {
+                        grid-area: t2;
+                    }
+                    .a-thumbnail__image-3 {
+                        grid-area: t3;
+                    }
+                    .m-work__description {
+                        grid-area: d;
+                        align-self: start;
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+
+                        * {
+                            grid-column: 1 / span 1;
+                        }
+                    }
+                }
+            }
+
+            .m-work__item--left {
+                grid-column: 1 / span 6;
+            }
+            .m-work__item--right {
+                grid-column: 3 / span 6;
+            }
         }
     }
 }

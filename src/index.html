@@ -7,62 +7,101 @@
         <title>Document</title>
     </head>
     <body>
+        <div class="alignment-grid">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <!-- navigation -->
+        <section class="o-nav">
+            <nav class="m-logo">
+                <p class="a-callout">K/D</p>
+            </nav>
+            <nav class="m-logo"></nav>
+            <nav class="m-project-links">
+                <each loop="item, index in projectReferences">
+                    <a href="{{ item.link }}" class="m-link-item">
+                        <p class="a-caption a-caption--sm">0{{ index + 1 }}</p>
+                        <p class="a-subhead">{{ item.fullname }}</p>
+                        <p class="a-caption a-caption--sm">{{ item.description }}</p>
+                    </a>
+                </each>
+            </nav>
+            <nav class="m-fixed-nav m-fixed-nav--main"></nav>
+            <nav class="m-fixed-nav m-fixed-nav--index"></nav>
+        </section>
+
+        <!-- background -->
+        <section class="a-background-stripes a-background-stripes--vertical"></section>
+
         <section class="m-preloader"></section>
 
-        <main class="js-main o-home">
-            <section class="m-home__title">
-                <h1 class="a-title a-title--lg">
-                    <span>{{title}}</span>
-                </h1>
-                <div class="a-arrow a-arrow--lg">
-                    <!-- add svg icon -->
-                </div>
-            </section>
-
-            <section class="m-home__intro">
-                <img class="a-intro__image" src="./assets/images/sample-1.jpg" alt="" />
-                <section class="m-intro__text">
-                    <p class="a-subhead"></p>
-                    <h4 class="a-headline"></h4>
-                    <p class="a-caption"></p>
-                    <button class="a-button">
-                        <p class="a-caption"></p>
-                        <hr class="a-underline" />
-                    </button>
-                    <p class="a-subhead"></p>
-                    <p class="a-caption"></p>
-                    <p class="a-caption"></p>
-                    <p class="a-caption"></p>
-                    <button class="a-button">
-                        <p class="a-caption"></p>
-                        <hr class="a-underline" />
-                    </button>
-                </section>
-            </section>
-
-            <section class="o-home__work">
-                <h3 class="a-title a-title--sm"></h3>
-                <p class="a-caption"></p>
-                <button class="a-button">
-                    <p class="a-caption"></p>
-                    <hr class="a-underline" />
-                </button>
-                <div class="m-work__item m-work__item--left">
-                    <p class="a-caption"></p>
-                    <h2 class="a-title a-title--lg"></h2>
-                    <div class="m-work__thumbnails">
-                        <img src="./assets/images/sample-2.jpg" alt="" class="a-thumbnail__image-1" />
-                        <img src="./assets/images/sample-1.jpg" alt="" class="a-thumbnail__image-2" />
-                        <img src="./assets/images/sample-2.jpg" alt="" class="a-thumbnail__image-3" />
-                        <div class="m-work__description">
-                            <p class="a-caption a-caption--sm"></p>
-                            <h5 class="a-callout"></h5>
-                            <p class="a-caption"></p>
-                        </div>
+        <main class="js-main o-home asscroll-container">
+            <div data-scroll class="o-scrollable">
+                <section class="m-home__title">
+                    <h1 class="a-title a-title--lg">
+                        <span>{{title}}</span>
+                    </h1>
+                    <div class="a-arrow a-arrow--lg">
+                        <!-- add svg icon -->
                     </div>
-                </div>
-            </section>
+                </section>
+
+                <section class="m-home__intro">
+                    <img class="a-intro__image" src="./assets/images/sample-1.jpg" alt="" />
+                    <section class="m-intro__text">
+                        <p class="a-subhead">{{homeIntro.greeting}}</p>
+                        <h4 class="a-headline">{{homeIntro.title}}</h4>
+                        <p class="a-caption">{{homeIntro.availability}}</p>
+                        <button class="a-button">
+                            <p class="a-caption">{{buttons.contact}}</p>
+                            <hr class="a-underline" />
+                        </button>
+                        <p class="a-subhead"></p>
+                        <p class="a-caption"></p>
+                        <p class="a-caption"></p>
+                        <p class="a-caption"></p>
+                        <button class="a-button">
+                            <p class="a-caption"></p>
+                            <hr class="a-underline" />
+                        </button>
+                    </section>
+                </section>
+
+                <section class="o-home__work">
+                    <h3 class="a-title a-title--sm"></h3>
+                    <p class="a-caption"></p>
+                    <button class="a-button">
+                        <p class="a-caption"></p>
+                        <hr class="a-underline" />
+                    </button>
+
+                    <each loop="item, index in projectReferences">
+                        <div class="m-work__item {{ homeWork.position(index) }}">
+                            <p class="a-caption">0{{index + 1 }} ©{{item.year}}</p>
+                            <h2 class="a-title a-title--md">{{ item.name }}</h2>
+                            <div class="m-work__thumbnails">
+                                <img src="{{ item.thumbnails.t1 }}" alt="" class="a-thumbnail__image-1" />
+                                <img src="{{ item.thumbnails.t2 }}" alt="" class="a-thumbnail__image-2" />
+                                <img src="{{ item.thumbnails.t3 }}" alt="" class="a-thumbnail__image-3" />
+                                <div class="m-work__description">
+                                    <p class="a-caption a-caption--sm">0{{ index + 1 }}</p>
+                                    <h5 class="a-callout">{{ item.fullname }}</h5>
+                                    <p class="a-caption a-caption--sm">{{ item.description }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </each>
+                </section>
+            </div>
         </main>
+
         <div id="a-webgl-container"></div>
         <script src="./index.js"></script>
     </body>

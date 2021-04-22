@@ -4,6 +4,7 @@ import FontFaceObserver from "fontfaceobserver";
 import imagesLoaded from "imagesloaded";
 import fragment from "./shaders/fragment.glsl";
 import vertex from "./shaders/vertex.glsl";
+import ASScroll from "@ashthornton/asscroll";
 
 /* constants */
 const FONT_TIMEOUT = 25000;
@@ -16,11 +17,12 @@ class WebGL {
         this.width = this.container.offsetWidth;
         this.height = this.container.offsetHeight;
 
-        this.renderer = new THREE.WebGLRenderer();
+        this.renderer = new THREE.WebGLRenderer({ alpha: true });
         this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
         this.renderer.setSize(this.width, this.height);
-        this.renderer.setClearColor(0xffffff, 1);
+        this.renderer.setClearColor(0xffffff, 0);
         this.container.appendChild(this.renderer.domElement);
+        this.scene.background = null;
 
         this.camera = new THREE.PerspectiveCamera(0, this.width / this.height, 400, 1000);
         this.camera_z = 600;
@@ -31,6 +33,7 @@ class WebGL {
         this.images = [...document.querySelectorAll("img")];
         this.isPlaying = true;
 
+        this.setSmoothScroll();
         this.addImages();
         this.setPosition();
         this.resize();
@@ -58,6 +61,8 @@ class WebGL {
             uniforms: {
                 time: { value: 0 },
                 uImage: { value: 0 },
+                uImageSizes: { value: new THREE.Vector2() },
+                uPlaneSizes: { value: new THREE.Vector2() },
             },
         });
 
@@ -72,6 +77,10 @@ class WebGL {
             let material = this.material.clone();
             this.materials.push(material);
             material.uniforms.uImage.value = texture;
+            material.uniforms.uImageSizes.value.x = img.naturalWidth;
+            material.uniforms.uImageSizes.value.y = img.naturalHeight;
+            material.uniforms.uPlaneSizes.value.x = bounds.width;
+            material.uniforms.uPlaneSizes.value.y = bounds.height;
 
             let mesh = new THREE.Mesh(geometry, material);
             this.scene.add(mesh);
@@ -91,7 +100,7 @@ class WebGL {
 
     setPosition() {
         this.imageStore.forEach((o) => {
-            o.mesh.position.y = -o.top + this.height / 2 - o.height / 2;
+            o.mesh.position.y = -this.smoothScroll.smoothScrollPos - o.top + this.height / 2 - o.height / 2;
             o.mesh.position.x = o.left - this.width / 2 + o.width / 2;
         });
     }
@@ -107,6 +116,13 @@ class WebGL {
         }
     }
 
+    setSmoothScroll() {
+        this.smoothScroll = new ASScroll({
+            disableRaf: true,
+        });
+        this.smoothScroll.enable();
+    }
+
     render() {
         if (!this.isPlaying) return;
         this.time += 0.05;
@@ -114,6 +130,8 @@ class WebGL {
         this.materials.forEach((m) => {
             m.uniforms.time.value = this.time;
         });
+        this.smoothScroll.onRaf();
+        this.setPosition();
 
         requestAnimationFrame(this.render.bind(this));
         this.renderer.render(this.scene, this.camera);
