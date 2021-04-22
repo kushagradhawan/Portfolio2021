@@ -30,22 +30,48 @@
     font-family: "nmontreal-medium";
 }
 .a-title--lg {
+    font-size: 12rem;
+    line-height: 10rem;
+    letter-spacing: -0.04em;
 }
 .a-title--md {
+    font-size: 7rem;
+    line-height: 96%;
+    letter-spacing: -0.04em;
 }
 .a-title--sm {
+    font-size: 2rem;
+    line-height: 124%;
+    letter-spacing: -0.04em;
 }
 
 .a-headline {
+    font-family: "NeueMontreal-Medium";
+    font-size: 1.5rem;
+    line-height: 116%;
+}
+
+.a-callout {
+    font-family: "NeueMontreal-Medium";
+    font-size: 0.75rem;
+    line-height: 0.875rem;
 }
 
 .a-subhead {
+    font-family: "NeueMontreal-Medium";
+    font-size: 0.625rem;
+    line-height: 0.75rem;
 }
 
 .a-caption {
+    font-family: "NeueMachina-Medium";
     text-transform: uppercase;
+    font-size: 0.625rem;
+    line-height: 1rem;
 }
 .a-caption--sm {
+    font-size: 0.5rem;
+    line-height: 0.75rem;
 }
 
 /* variables */
