@@ -1,0 +1,121 @@
+@use "./resets";
+
+@font-face {
+    font-family: "nmachina-regular";
+    src: url("./assets/fonts/nmachina-regular.otf") format("opentype");
+}
+@font-face {
+    font-family: "nmachina-medium";
+    src: url("./assets/fonts/nmachina-regular.otf") format("opentype");
+}
+@font-face {
+    font-family: "nmachina-bold";
+    src: url("./assets/fonts/nmachina-regular.otf") format("opentype");
+}
+@font-face {
+    font-family: "nmontreal-regular";
+    src: url("./assets/fonts/nmontreal-regular.otf") format("opentype");
+}
+@font-face {
+    font-family: "nmontreal-medium";
+    src: url("./assets/fonts/nmontreal-regular.otf") format("opentype");
+}
+@font-face {
+    font-family: "nmontreal-bold";
+    src: url("./assets/fonts/nmontreal-regular.otf") format("opentype");
+}
+
+.a-title {
+    text-transform: uppercase;
+    font-family: "nmontreal-medium";
+}
+.a-title--lg {
+}
+.a-title--md {
+}
+.a-title--sm {
+}
+
+.a-headline {
+}
+
+.a-subhead {
+}
+
+.a-caption {
+    text-transform: uppercase;
+}
+.a-caption--sm {
+}
+
+/* variables */
+$main-container-width: 80rem;
+$main-container-col-count: 8;
+
+/* base styles */
+.a-grid {
+    display: grid;
+    grid-template-columns: repeat($main-container-col-count, 1fr);
+    column-gap: 1rem;
+    width: $main-container-width;
+    margin-left: calc((100vw - #{$main-container-width}) / 2);
+}
+.a-grid--no-margin {
+    margin-left: unset;
+}
+#a-webgl-container {
+    width: 100vw;
+    height: 100vh;
+    z-index: -2;
+    background: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.o-home {
+    @extend .a-grid;
+    .o-home__work {
+        grid-column: 1 / span $main-container-col-count;
+        @extend .a-grid;
+        @extend .a-grid--no-margin;
+
+        .m-work__item {
+            margin-bottom: 8rem;
+            .m-work__thumbnails {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(3, 16rem);
+                grid-template-areas: "t1 t2" "t1 t3" "d t3";
+                column-gap: 1rem;
+                row-gap: 1rem;
+
+                img {
+                    width: 100%;
+                    max-height: 100%;
+                    opacity: 0.3;
+                }
+
+                .a-thumbnail__image-1 {
+                    grid-area: t1;
+                }
+                .a-thumbnail__image-2 {
+                    grid-area: t2;
+                }
+                .a-thumbnail__image-3 {
+                    grid-area: t3;
+                }
+                .m-work__description {
+                    grid-area: d;
+                    align-self: start;
+                }
+            }
+        }
+        .m-work__item--left {
+            grid-column: 1 / span 6;
+        }
+        .m-work__item--right {
+            grid-column: 3 / span 6;
+        }
+    }
+}

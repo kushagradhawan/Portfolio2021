@@ -1,0 +1,46 @@
+/* experimental reset */
+* {
+    background: none;
+    border-spacing: 0;
+    color: #000;
+    font-family: "PT Sans Narrow", sans-serif;
+    font-weight: normal;
+    line-height: 1rem;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    text-decoration: none;
+    text-indent: 0;
+    box-sizing: border-box;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* scroll behaviour reset */
+body {
+    overscroll-behavior: none;
+    box-sizing: border-box;
+}
+
+/* links reset */
+a:link,
+a:visited {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: auto;
+}
+
+/* button resets */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+/* img sets */
+img {
+    object-fit: cover;
+}
