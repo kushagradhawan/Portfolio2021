@@ -117,8 +117,10 @@ module.exports = {
                         introduction: {
                             name: "FA",
                             fullname: "FA Homes",
+                            titleIndentation: "" /* in percentage */,
                             deliverables: "Brand Identity, Visual Design, Web and Application Design",
-                            deliveryDate: "",
+                            deliveryDate: "08.2021",
+                            timeline: "From August 2019 to September 2021",
                             thumbnails: {
                                 t1: "./assets/images/sample-1.jpg",
                                 t2: "./assets/images/sample-2.jpg",
@@ -130,10 +132,78 @@ module.exports = {
                             credits: "2020",
                         },
                         brief: {
-                            challenge: "",
-                            description: "",
+                            challenge: "The challenge of creating a corporate website with no user research",
+                            descriptionLeft: "",
+                            descriptionRight: "",
                         },
-                        finalDesign: {},
+                        finalDesigns: [
+                            {
+                                link: "./assets/images/sample-1.jpg",
+                                caption: "",
+                                description: "",
+                                flag: "desktop",
+                            },
+                            {
+                                link: "./assets/images/sample-1.jpg",
+                                caption: "",
+                                description: "",
+                                flag: "desktop",
+                            },
+                            {
+                                link: "./assets/images/sample-1.jpg",
+                                caption: "",
+                                description: "",
+                                flag: "desktop",
+                            },
+                            {
+                                link: "./assets/images/sample-1.jpg",
+                                caption: "",
+                                description: "",
+                                flag: "desktop",
+                            },
+                            {
+                                link: "./assets/images/sample-1.jpg",
+                                caption: "",
+                                description: "",
+                                flag: "desktop",
+                            },
+                            {
+                                link: "./assets/images/sample-1.jpg",
+                                caption: "",
+                                description: "",
+                                flag: "fullpage",
+                            },
+                            {
+                                link: "./assets/images/sample-1.jpg",
+                                caption: "",
+                                description: "",
+                                flag: "desktop",
+                            },
+                            {
+                                link: "./assets/images/sample-1.jpg",
+                                caption: "",
+                                description: "",
+                                flag: "desktop",
+                            },
+                            {
+                                link: "./assets/images/sample-1.jpg",
+                                caption: "",
+                                description: "",
+                                flag: "mobile",
+                            },
+                            {
+                                link: "./assets/images/sample-1.jpg",
+                                caption: "",
+                                description: "",
+                                flag: "mobile",
+                            },
+                            {
+                                link: "./assets/images/sample-1.jpg",
+                                caption: "",
+                                description: "",
+                                flag: "mobile",
+                            },
+                        ],
                     },
                 },
                 designProcess: {

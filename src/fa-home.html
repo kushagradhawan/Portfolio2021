@@ -6,5 +6,70 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
     </head>
-    <body></body>
+    <body>
+        <div class="alignment-grid">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <!-- navigation -->
+        <section class="o-nav">
+            <nav class="m-logo">
+                <p class="a-callout">K/D</p>
+            </nav>
+            <nav class="m-logo"></nav>
+            <nav class="m-project-links">
+                <each loop="item, index in projectReferences">
+                    <a href="{{ item.link }}" class="m-link-item">
+                        <p class="a-caption a-caption--sm">0{{ index + 1 }}</p>
+                        <p class="a-subhead">{{ item.fullname }}</p>
+                        <p class="a-caption a-caption--sm">{{ item.description }}</p>
+                    </a>
+                </each>
+            </nav>
+            <nav class="m-fixed-nav m-fixed-nav--main"></nav>
+            <nav class="m-fixed-nav m-fixed-nav--index"></nav>
+        </section>
+
+        <!-- background -->
+        <section class="a-background-stripes a-background-stripes--vertical"></section>
+
+        <div class="asscroll-container">
+            <div data-router-wrapper class="data-router-wrapper a-scrollable">
+                <main class="js-main o-cs" data-router-view="case-study">
+                    <section class="m-cs__title">
+                        <h1 class="a-title a-title--lg">
+                            <span>{{title}}</span>
+                        </h1>
+                        <div class="a-arrow a-arrow--lg">
+                            <!-- add svg icon -->
+                        </div>
+                    </section>
+                    <section class="m-cs__meta">
+                        <p class="a-subhead">Deliverables</p>
+                        <p class="a-caption">{{caseStudy.FA.introduction.deliverables}}</p>
+                        <p class="a-subhead">{{caseStudy.FA.introduction.deliveryDate}}</p>
+                        <p class="a-caption">{{caseStudy.FA.introduction.timeline}}</p>
+                    </section>
+                    <section class="m-cs__thumbnails">
+                        <img src="{{ caseStudy.FA.introduction.thumbnails.t1 }}" alt="" class="a-thumbnail__image-1" />
+                        <img src="{{ caseStudy.FA.introduction.thumbnails.t2  }}" alt="" class="a-thumbnail__image-2" />
+                        <img src="{{ caseStudy.FA.introduction.thumbnails.t3  }}" alt="" class="a-thumbnail__image-3" />
+                    </section>
+                    <section class="m-cs__intro"></section>
+                    <section class="m-cs__project-def"></section>
+                    <section class="m-cs__images"></section>
+                </main>
+            </div>
+        </div>
+
+        <div id="a-webgl-container"></div>
+        <script src="./index.js"></script>
+    </body>
 </html>
