@@ -42,9 +42,9 @@
 
         <section class="m-preloader"></section>
 
-        <div class="data-router-wrapper">
-            <main class="js-main o-home asscroll-container">
-                <div data-scroll class="o-scrollable">
+        <div class="asscroll-container">
+            <div data-router-wrapper class="data-router-wrapper a-scrollable">
+                <main class="js-main o-home" data-router-view="home">
                     <section class="m-home__title">
                         <h1 class="a-title a-title--lg">
                             <span>{{title}}</span>
@@ -100,8 +100,8 @@
                             </div>
                         </each>
                     </section>
-                </div>
-            </main>
+                </main>
+            </div>
         </div>
 
         <div id="a-webgl-container"></div>

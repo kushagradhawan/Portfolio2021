@@ -6,6 +6,7 @@ import fragment from "./shaders/fragment.glsl";
 import vertex from "./shaders/vertex.glsl";
 import ASScroll from "@ashthornton/asscroll";
 import Highway from "@dogstudio/highway";
+import { gsap } from "gsap";
 
 /* constants */
 const FONT_TIMEOUT = 25000;
@@ -68,10 +69,11 @@ class WebGL {
         });
 
         this.materials = [];
+        this.planeGeometry = new THREE.PlaneBufferGeometry(1, 1, 16, 16);
 
         this.imageStore = this.images.map((img) => {
             let bounds = img.getBoundingClientRect();
-            let geometry = new THREE.PlaneBufferGeometry(bounds.width, bounds.height, 16, 16);
+            let geometry = this.planeGeometry;
             let texture = new THREE.Texture(img);
             texture.needsUpdate = true;
 
@@ -84,6 +86,7 @@ class WebGL {
             material.uniforms.uPlaneSizes.value.y = bounds.height;
 
             let mesh = new THREE.Mesh(geometry, material);
+            mesh.scale.set(bounds.width, bounds.height, 1);
             this.scene.add(mesh);
 
             return {
@@ -120,8 +123,26 @@ class WebGL {
     setSmoothScroll() {
         this.smoothScroll = new ASScroll({
             disableRaf: true,
+            innerElement: ".a-scrollable",
         });
         this.smoothScroll.enable();
+    }
+
+    resetSmoothScroll(target) {
+        console.log("logged reset");
+        this.smoothScroll.enable(false, true, false, false);
+    }
+
+    disableSmoothScroll() {
+        this.smoothScroll.disable();
+    }
+
+    dispose() {
+        this.imageStore.forEach((o) => {
+            o.mesh.geometry.dispose();
+            o.mesh.material.dispose();
+            this.scene.remove(o.mesh);
+        });
     }
 
     render() {
@@ -175,4 +196,36 @@ Promise.all([
 
 /* logic for page transitions */
 
-const highwayCore = new Highway.Core({});
+class CustomRenderer extends Highway.Renderer {
+    // Hooks/methods
+    onEnter() {
+        console.log("entered dp");
+        webgl.dispose();
+        webgl.disableSmoothScroll();
+    }
+    onLeave() {}
+    onEnterCompleted() {
+        webgl.resetSmoothScroll();
+    }
+    onLeaveCompleted() {}
+}
+
+class DefaultTransition extends Highway.Transition {
+    in({ from, to, trigger, done }) {
+        from.remove();
+        gsap.from(to, { duration: 0.5, opacity: 0, onComplete: done });
+    }
+
+    out({ from, trigger, done }) {
+        gsap.to(from, { duration: 0.5, opacity: 0, onComplete: done });
+    }
+}
+
+const highwayCore = new Highway.Core({
+    renderers: {
+        "design-process": CustomRenderer,
+    },
+    transitions: {
+        default: DefaultTransition,
+    },
+});

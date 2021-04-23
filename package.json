@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.html",
     "scripts": {
-        "dev": "npm run clean && parcel ./src/index.html -p 1112",
+        "dev": "npm run clean && parcel ./src/*.html -p 1112",
         "build": "parcel build ./src/index.html --dist-dir ./build",
         "clean": "rimraf ./dist && rm -rf ./.parcel-cache && rm -rf ./.cache"
     },
@@ -29,6 +29,7 @@
         "@ashthornton/asscroll": "^1.7.7",
         "@dogstudio/highway": "^2.2.2",
         "fontfaceobserver": "^2.1.0",
+        "gsap": "^3.6.1",
         "imagesloaded": "^4.1.4",
         "three": "^0.127.0"
     }
