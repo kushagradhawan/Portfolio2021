@@ -2,7 +2,7 @@
 * {
     background: none;
     border-spacing: 0;
-    color: #000;
+    color: #202020;
     font-family: "PT Sans Narrow", sans-serif;
     font-weight: normal;
     line-height: 1rem;
@@ -23,7 +23,7 @@
 body {
     overscroll-behavior: none;
     box-sizing: border-box;
-    background-color: red;
+    background-color: #ffffff;
 }
 
 /* links reset */
@@ -45,4 +45,10 @@ input::-moz-focus-inner {
 img {
     object-fit: cover;
     opacity: 0;
+    pointer-events: none;
+}
+
+/* paragraph resets */
+p {
+    display: block;
 }

@@ -1,9 +1,9 @@
 varying vec2 vUv;
 
-uniform float time;
 uniform sampler2D uImage;
 uniform vec2 uImageSizes;
 uniform vec2 uPlaneSizes;
+uniform float uStrength;
 
 void main() {
 
@@ -16,7 +16,10 @@ void main() {
   vec2 uv = vec2(vUv.x * ratio.x + (1.0 - ratio.x) * 0.5,
                  vUv.y * ratio.y + (1.0 - ratio.y) * 0.5);
 
-  gl_FragColor.rgb = texture2D(uImage, uv).rgb;
+  // gl_FragColor.rgb = texture2D(uImage, uv).rgb;
+  gl_FragColor.r = texture2D(uImage, uv + 0.0008 * -uStrength).r;
+  gl_FragColor.g = texture2D(uImage, uv + 0.0002 * -uStrength).g;
+  gl_FragColor.b = texture2D(uImage, uv).b;
   gl_FragColor.a = 1.0;
 
   // vec4 image = texture2D(uImage, vUv);

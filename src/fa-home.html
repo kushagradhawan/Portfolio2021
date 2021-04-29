@@ -22,19 +22,95 @@
         <section class="o-nav">
             <nav class="m-logo">
                 <p class="a-callout">K/D</p>
+                <p class="a-caption a-caption--sm mt2">Designer / Developer</p>
             </nav>
             <nav class="m-logo"></nav>
             <nav class="m-project-links">
                 <each loop="item, index in projectReferences">
                     <a href="{{ item.link }}" class="m-link-item">
-                        <p class="a-caption a-caption--sm">0{{ index + 1 }}</p>
-                        <p class="a-subhead">{{ item.fullname }}</p>
-                        <p class="a-caption a-caption--sm">{{ item.description }}</p>
+                        <p class="a-caption a-caption--sm a-caption--regular">0{{ index + 1 }}</p>
+                        <p class="a-subhead mt1">{{ item.name }}</p>
+                        <p class="a-caption a-caption--sm a-caption--regular mt4">{{ item.description }}</p>
+                        <img class="m-link-item__image" src="{{item.thumbnails.t3}}" alt="" />
                     </a>
                 </each>
             </nav>
-            <nav class="m-fixed-nav m-fixed-nav--main"></nav>
-            <nav class="m-fixed-nav m-fixed-nav--index"></nav>
+            <nav class="m-fixed-nav m-fixed-nav--main">
+                <section class="m-fixed-nav__section">
+                    <h5 class="a-callout">Contents</h5>
+                    <div class="m-fixed-nav__item">
+                        <p class="a-caption">Information</p>
+                        <p class="a-caption">INF</p>
+                    </div>
+                    <div class="m-fixed-nav__item">
+                        <p class="a-caption">Resume</p>
+                        <p class="a-caption">RES</p>
+                    </div>
+                    <div class="m-fixed-nav__item">
+                        <p class="a-caption">UI Gallery</p>
+                        <p class="a-caption">UIG</p>
+                    </div>
+                </section>
+                <section class="m-fixed-nav__section mt6">
+                    <h5 class="a-callout">Supplement Links</h5>
+                    <div class="m-fixed-nav__item">
+                        <p class="a-caption">Information</p>
+                        <p class="a-caption">INF</p>
+                    </div>
+                    <div class="m-fixed-nav__item">
+                        <p class="a-caption">Resume</p>
+                        <p class="a-caption">RES</p>
+                    </div>
+                    <div class="m-fixed-nav__item">
+                        <p class="a-caption">UI Gallery</p>
+                        <p class="a-caption">UIG</p>
+                    </div>
+                </section>
+            </nav>
+            <nav class="m-fixed-nav m-fixed-nav--index">
+                <section class="m-fixed-nav__section">
+                    <h5 class="a-callout">Contents</h5>
+                    <div class="m-fixed-nav__item">
+                        <p class="a-caption">Information</p>
+                        <p class="a-caption">INF</p>
+                    </div>
+                    <div class="m-fixed-nav__item">
+                        <p class="a-caption">Resume</p>
+                        <p class="a-caption">RES</p>
+                    </div>
+                    <div class="m-fixed-nav__item">
+                        <p class="a-caption">UI Gallery</p>
+                        <p class="a-caption">UIG</p>
+                    </div>
+                    <div class="m-fixed-nav__item">
+                        <p class="a-caption">Information</p>
+                        <p class="a-caption">INF</p>
+                    </div>
+                    <div class="m-fixed-nav__item">
+                        <p class="a-caption">Resume</p>
+                        <p class="a-caption">RES</p>
+                    </div>
+                    <div class="m-fixed-nav__item">
+                        <p class="a-caption">UI Gallery</p>
+                        <p class="a-caption">UIG</p>
+                    </div>
+                </section>
+                <section class="m-fixed-nav__section mt6">
+                    <h5 class="a-callout">Supplement Links</h5>
+                    <div class="m-fixed-nav__item">
+                        <p class="a-caption">Information</p>
+                        <p class="a-caption">INF</p>
+                    </div>
+                    <div class="m-fixed-nav__item">
+                        <p class="a-caption">Resume</p>
+                        <p class="a-caption">RES</p>
+                    </div>
+                    <div class="m-fixed-nav__item">
+                        <p class="a-caption">UI Gallery</p>
+                        <p class="a-caption">UIG</p>
+                    </div>
+                </section>
+            </nav>
         </section>
 
         <!-- background -->
@@ -42,33 +118,89 @@
 
         <div class="asscroll-container">
             <div data-router-wrapper class="data-router-wrapper a-scrollable">
-                <main class="js-main o-cs" data-router-view="case-study">
+                <main class="js-main o-cs" data-router-view="fa-case-study">
                     <section class="m-cs__title">
                         <h1 class="a-title a-title--lg">
-                            <span>{{title}}</span>
+                            <span>{{caseStudy.FA.introduction.name}}</span>
                         </h1>
                         <div class="a-arrow a-arrow--lg">
                             <!-- add svg icon -->
                         </div>
                     </section>
                     <section class="m-cs__meta">
-                        <p class="a-subhead">Deliverables</p>
-                        <p class="a-caption">{{caseStudy.FA.introduction.deliverables}}</p>
-                        <p class="a-subhead">{{caseStudy.FA.introduction.deliveryDate}}</p>
-                        <p class="a-caption">{{caseStudy.FA.introduction.timeline}}</p>
+                        <p class="a-callout">Deliverables</p>
+                        <p class="a-caption a-caption--sm mt2">We delivered on {{caseStudy.FA.introduction.deliverables}}</p>
+                        <p class="a-callout mt8">{{caseStudy.FA.introduction.deliveryDate}}</p>
+                        <p class="a-caption a-caption--sm mt2">{{caseStudy.FA.introduction.timeline}}</p>
                     </section>
                     <section class="m-cs__thumbnails">
-                        <img src="{{ caseStudy.FA.introduction.thumbnails.t1 }}" alt="" class="a-thumbnail__image-1" />
-                        <img src="{{ caseStudy.FA.introduction.thumbnails.t2  }}" alt="" class="a-thumbnail__image-2" />
-                        <img src="{{ caseStudy.FA.introduction.thumbnails.t3  }}" alt="" class="a-thumbnail__image-3" />
+                        <img src="{{ caseStudy.FA.introduction.thumbnails.t1 }}" alt="" class="a-thumbnail__image-1 image--scrollable" />
+                        <img src="{{ caseStudy.FA.introduction.thumbnails.t2 }}" alt="" class="a-thumbnail__image-2 image--scrollable" />
+                        <img src="{{ caseStudy.FA.introduction.thumbnails.t3 }}" alt="" class="a-thumbnail__image-3 image--scrollable" />
                     </section>
-                    <section class="m-cs__intro"></section>
-                    <section class="m-cs__project-def"></section>
-                    <section class="m-cs__images"></section>
+                    <section class="m-cs__intro mt32">
+                        <div class="m-cs__fullname a-title a-title--sm">
+                            <span>©</span>
+                            <p>{{caseStudy.FA.introduction.fullname}}</p>
+                        </div>
+                        <div class="m-cs__info">
+                            <p class="a-callout">Info</p>
+                            <div class="a-body a-body--regular mt4">{{{caseStudy.FA.introduction.information}}}</div>
+                        </div>
+                        <div class="m-cs__process">
+                            <p class="a-callout">Design Process</p>
+                            <div class="a-body a-body--regular mt4">{{{caseStudy.FA.introduction.process}}}</div>
+                            <button class="a-button mt10">
+                                <p class="a-caption a-caption--bold">Design Process</p>
+                                <hr class="a-underline" />
+                            </button>
+                        </div>
+                        <div class="m-cs__role">
+                            <p class="a-callout">My Role</p>
+                            <div class="a-body a-body--regular mt4">{{{caseStudy.FA.introduction.myRole}}}</div>
+                            <p class="a-callout mt12">Credits</p>
+                            <div class="a-body a-body--regular mt4">{{{caseStudy.FA.introduction.credits}}}</div>
+                        </div>
+                    </section>
+                    <p class="a-caption a-caption--bold a-section-title mt32">#Project Definition</p>
+                    <section class="m-cs__brief mt16">
+                        <img src="{{ caseStudy.FA.brief.image }}" alt="" class="a-brief__image image--scrollable" />
+                        <div class="m-brief__image-text">
+                            <p class="a-subhead">{{caseStudy.FA.brief.imageCaption}}</p>
+                            <p class="a-caption a-caption--sm mt4">{{caseStudy.FA.brief.imageDescription}}</p>
+                        </div>
+                        <div class="m-brief__text mt16">
+                            <p class="a-headline m-brief__title">{{caseStudy.FA.brief.challenge}}</p>
+                            <div class="a-body a-body--regular m-brief__text__left">{{{caseStudy.FA.brief.descriptionLeft}}}</div>
+                            <div class="a-body a-body--regular m-brief__text__right">{{{caseStudy.FA.brief.descriptionRight}}}</div>
+                        </div>
+                    </section>
+                    <p class="a-caption a-caption--bold a-section-title mt48 mb16">#Design Samples</p>
+                    <each loop="item, index in caseStudy.FA.finalDesigns">
+                        <div class="m-cs__final-design m-cs__final-design--{{item.flag}} mb12">
+                            <img src="{{ item.link }}" alt="" class="image--scrollable" />
+                            <div class="m-final-design__image-text">
+                                <p class="a-caption a-caption--sm">0{{index + 1}}</p>
+                                <p class="a-subhead mt1">{{item.caption}}</p>
+                                <p class="a-caption a-caption--sm mt4">{{item.description}}</p>
+                            </div>
+                        </div>
+                    </each>
+                    <p class="a-caption a-caption--bold a-section-title mt48 mb16">#Wireframes</p>
+                    <each loop="item, index in caseStudy.FA.wireframes">
+                        <div class="m-cs__wireframes mb12">
+                            <img src="{{ item.link }}" alt="" class="image--scrollable" />
+                            <div class="m-final-design__image-text">
+                                <p class="a-caption a-caption--sm">0{{index + 1}}</p>
+                                <p class="a-subhead mt1">{{item.caption}}</p>
+                                <p class="a-caption a-caption--sm mt4">{{item.description}}</p>
+                            </div>
+                        </div>
+                    </each>
                 </main>
             </div>
         </div>
-
+        <div id="a-rollup-container"></div>
         <div id="a-webgl-container"></div>
         <script src="./index.js"></script>
     </body>

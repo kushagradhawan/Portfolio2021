@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="alignment-grid">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <!-- navigation -->
+        <section class="o-nav">
+            <nav class="m-logo">
+                <p class="a-callout">K/D</p>
+                <p class="a-caption a-caption--sm mt2">Designer / Developer</p>
+            </nav>
+            <nav class="m-logo"></nav>
+            <nav class="m-project-links">
+                <each loop="item, index in projectReferences">
+                    <a href="{{ item.link }}" class="m-link-item">
+                        <p class="a-caption a-caption--sm a-caption--regular">0{{ index + 1 }}</p>
+                        <p class="a-subhead mt1">{{ item.name }}</p>
+                        <p class="a-caption a-caption--sm a-caption--regular mt4">{{ item.description }}</p>
+                        <img class="m-link-item__image" src="{{item.thumbnails.t1}}" alt="" />
+                    </a>
+                </each>
+            </nav>
+            <nav class="m-fixed-nav m-fixed-nav--main">
+                <section class="m-fixed-nav__section">
+                    <h5 class="a-callout">Contents</h5>
+                    <div class="m-fixed-nav__item">
+                        <p class="a-caption">Information</p>
+                        <p class="a-caption a-caption--bold">INF</p>
+                    </div>
+                    <div class="m-fixed-nav__item">
+                        <p class="a-caption">Resume</p>
+                        <p class="a-caption a-caption--bold">RES</p>
+                    </div>
+                    <div class="m-fixed-nav__item">
+                        <p class="a-caption">UI Gallery</p>
+                        <p class="a-caption a-caption--bold">UIG</p>
+                    </div>
+                </section>
+                <section class="m-fixed-nav__section mt6">
+                    <h5 class="a-callout">Supplement Links</h5>
+                    <div class="m-fixed-nav__item">
+                        <p class="a-caption">Information</p>
+                        <p class="a-caption a-caption--bold">INF</p>
+                    </div>
+                    <div class="m-fixed-nav__item">
+                        <p class="a-caption">Resume</p>
+                        <p class="a-caption a-caption--bold">RES</p>
+                    </div>
+                    <div class="m-fixed-nav__item">
+                        <p class="a-caption">UI Gallery</p>
+                        <p class="a-caption a-caption--bold">UIG</p>
+                    </div>
+                </section>
+            </nav>
+        </section>
+        <!-- background -->
+        <section class="a-background-stripes a-background-stripes--vertical"></section>
+
+        <section class="m-preloader"></section>
+
+        <div class="asscroll-container">
+            <div data-router-wrapper class="data-router-wrapper a-scrollable">
+                <main class="js-main o-gallery" data-router-view="ui-gallery">
+                    <section class="m-gallery__title">
+                        <h1 class="a-title a-title--lg">
+                            <span>{{UIGallery.title}}</span>
+                        </h1>
+                        <div class="a-arrow a-arrow--lg"></div>
+                    </section>
+
+                    <section class="m-gallery__meta">
+                        <p class="a-callout">Deliverables</p>
+                        <p class="a-caption a-caption--sm mt2">We delivered on {{caseStudy.FA.introduction.deliverables}}</p>
+                        <p class="a-callout mt8">{{caseStudy.FA.introduction.deliveryDate}}</p>
+                        <p class="a-caption a-caption--sm mt2">{{caseStudy.FA.introduction.timeline}}</p>
+                    </section>
+                    <div class="m-gallery__g m-gallery--square mb32">
+                        <each loop="item,index in UIGallery.squareImages">
+                            <img src="{{ item }}" alt="" class="image--scrollable" />
+                        </each>
+                    </div>
+                    <div class="m-gallery__g m-gallery--desktop mb32">
+                        <each loop="item,index in UIGallery.desktopImages">
+                            <img src="{{ item }}" alt="" class="image--scrollable" />
+                        </each>
+                    </div>
+                    <div class="m-gallery__g m-gallery--mobile mb32">
+                        <each loop="item,index in UIGallery.mobileImages">
+                            <img src="{{ item }}" alt="" class="image--scrollable" />
+                        </each>
+                    </div>
+                </main>
+            </div>
+        </div>
+        <div id="a-rollup-container"></div>
+        <div id="a-webgl-container"></div>
+        <script defer src="./index.js"></script>
+    </body>
+</html>

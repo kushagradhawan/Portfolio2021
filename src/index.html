@@ -22,21 +22,52 @@
         <section class="o-nav">
             <nav class="m-logo">
                 <p class="a-callout">K/D</p>
+                <p class="a-caption a-caption--sm mt2">Designer / Developer</p>
             </nav>
             <nav class="m-logo"></nav>
             <nav class="m-project-links">
                 <each loop="item, index in projectReferences">
                     <a href="{{ item.link }}" class="m-link-item">
-                        <p class="a-caption a-caption--sm">0{{ index + 1 }}</p>
-                        <p class="a-subhead">{{ item.fullname }}</p>
-                        <p class="a-caption a-caption--sm">{{ item.description }}</p>
+                        <p class="a-caption a-caption--sm a-caption--regular">0{{ index + 1 }}</p>
+                        <p class="a-subhead mt1">{{ item.name }}</p>
+                        <p class="a-caption a-caption--sm a-caption--regular mt4">{{ item.description }}</p>
+                        <img class="m-link-item__image" src="{{item.thumbnails.t1}}" alt="" />
                     </a>
                 </each>
             </nav>
-            <nav class="m-fixed-nav m-fixed-nav--main"></nav>
-            <nav class="m-fixed-nav m-fixed-nav--index"></nav>
+            <nav class="m-fixed-nav m-fixed-nav--main">
+                <section class="m-fixed-nav__section">
+                    <h5 class="a-callout">Contents</h5>
+                    <div class="m-fixed-nav__item">
+                        <p class="a-caption">Information</p>
+                        <p class="a-caption a-caption--bold">INF</p>
+                    </div>
+                    <div class="m-fixed-nav__item">
+                        <p class="a-caption">Resume</p>
+                        <p class="a-caption a-caption--bold">RES</p>
+                    </div>
+                    <div class="m-fixed-nav__item">
+                        <p class="a-caption">UI Gallery</p>
+                        <p class="a-caption a-caption--bold">UIG</p>
+                    </div>
+                </section>
+                <section class="m-fixed-nav__section mt6">
+                    <h5 class="a-callout">Supplement Links</h5>
+                    <div class="m-fixed-nav__item">
+                        <p class="a-caption">Information</p>
+                        <p class="a-caption a-caption--bold">INF</p>
+                    </div>
+                    <div class="m-fixed-nav__item">
+                        <p class="a-caption">Resume</p>
+                        <p class="a-caption a-caption--bold">RES</p>
+                    </div>
+                    <div class="m-fixed-nav__item">
+                        <p class="a-caption">UI Gallery</p>
+                        <p class="a-caption a-caption--bold">UIG</p>
+                    </div>
+                </section>
+            </nav>
         </section>
-
         <!-- background -->
         <section class="a-background-stripes a-background-stripes--vertical"></section>
 
@@ -55,46 +86,47 @@
                     </section>
 
                     <section class="m-home__intro">
-                        <img class="a-intro__image" src="./assets/images/sample-1.jpg" alt="" />
+                        <img class="a-intro__image image--scrollable" src="./assets/images/main.jpg" alt="" />
                         <section class="m-intro__text">
-                            <p class="a-subhead">{{homeIntro.greeting}}</p>
-                            <h4 class="a-headline">{{homeIntro.title}}</h4>
-                            <p class="a-caption">{{homeIntro.availability}}</p>
-                            <button class="a-button">
-                                <p class="a-caption">{{buttons.contact}}</p>
+                            <p class="a-callout">{{homeIntro.greeting}}</p>
+                            <h4 class="a-title a-title--sm mt8">{{homeIntro.title}}</h4>
+                            <h4 class="a-title a-title--sm">Folio ©2021</h4>
+                            <p class="a-caption mt8">{{homeIntro.availability}}</p>
+                            <button class="a-button mt4">
+                                <p class="a-caption a-caption--bold">{{buttons.contact}}</p>
                                 <hr class="a-underline" />
                             </button>
-                            <p class="a-subhead"></p>
-                            <p class="a-caption"></p>
-                            <p class="a-caption"></p>
-                            <p class="a-caption"></p>
-                            <button class="a-button">
-                                <p class="a-caption"></p>
+                            <p class="a-callout mt24">Info</p>
+                            <div class="a-caption mt8">{{{homeIntro.info}}}</div>
+                            <button class="a-button mt4">
+                                <p class="a-caption">Resume</p>
                                 <hr class="a-underline" />
                             </button>
                         </section>
                     </section>
 
-                    <section class="o-home__work">
-                        <h3 class="a-title a-title--sm"></h3>
-                        <p class="a-caption"></p>
-                        <button class="a-button">
-                            <p class="a-caption"></p>
-                            <hr class="a-underline" />
-                        </button>
+                    <section class="o-home__work mt32">
+                        <div class="m-work__intro">
+                            <p class="a-caption a-caption--bold a-section-title">#{{homeWork.title}}</p>
+                            <p class="a-caption mt8">{{homeWork.description}}</p>
+                            <button class="a-button mt8">
+                                <p class="a-caption a-caption--bold">UI Gallery</p>
+                                <hr class="a-underline" />
+                            </button>
+                        </div>
 
                         <each loop="item, index in projectReferences">
-                            <div class="m-work__item {{ homeWork.position(index) }}">
+                            <div class="m-work__item {{ homeWork.position(index) }} mt32">
                                 <p class="a-caption">0{{index + 1 }} ©{{item.year}}</p>
                                 <h2 class="a-title a-title--md">{{ item.name }}</h2>
-                                <div class="m-work__thumbnails">
-                                    <img src="{{ item.thumbnails.t1 }}" alt="" class="a-thumbnail__image-1" />
-                                    <img src="{{ item.thumbnails.t2 }}" alt="" class="a-thumbnail__image-2" />
-                                    <img src="{{ item.thumbnails.t3 }}" alt="" class="a-thumbnail__image-3" />
+                                <div class="m-work__thumbnails mt8">
+                                    <img src="{{ item.thumbnails.t1 }}" alt="" class="a-thumbnail__image-1 image--scrollable" />
+                                    <img src="{{ item.thumbnails.t2 }}" alt="" class="a-thumbnail__image-2 image--scrollable" />
+                                    <img src="{{ item.thumbnails.t3 }}" alt="" class="a-thumbnail__image-3 image--scrollable" />
                                     <div class="m-work__description">
                                         <p class="a-caption a-caption--sm">0{{ index + 1 }}</p>
-                                        <h5 class="a-callout">{{ item.fullname }}</h5>
-                                        <p class="a-caption a-caption--sm">{{ item.description }}</p>
+                                        <h5 class="a-callout mt2">{{ item.fullname }}</h5>
+                                        <p class="a-caption a-caption--sm mt2">{{ item.description }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -103,7 +135,7 @@
                 </main>
             </div>
         </div>
-
+        <div id="a-rollup-container"></div>
         <div id="a-webgl-container"></div>
         <script defer src="./index.js"></script>
     </body>
